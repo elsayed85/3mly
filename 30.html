@@ -1,0 +1,37 @@
+// forget-password.html
+<form method="post" action="forget_password.php">
+    <input type="email" name="email" placeholder="Email" id="email" required>
+    <input type="phone" name="phone" placeholder="Phone" id="phone" required>
+    <input type="submit" value="Send new password">
+</form>
+
+// css styling
+<style>
+    form {
+        font-size: 110%;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        color: saddlebrown;
+        margin: 16px 0 3px;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: cornsilk;
+        border: solid 1px tan;
+    }
+</style>
+
+// phone and email required using jquery
+<script>
+    $(document).ready(function () {
+        $('#email').attr('required', true);
+        $('#phone').attr('required', true);
+    });
+</script>

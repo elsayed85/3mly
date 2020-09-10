@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <td>username</td>
+            <td>address</td>
+        </tr>
+    </thead>
+    <tbody id="displayArea"></tbody>
+</table>
+
+<div class="formdata">
+    <form action="" method="post" id="myForm">
+        <input type="text" name="username"><br /><br />
+        <input type="text" name="address"><br /><br />
+        <input type="submit" name="sub" value="submit">
+    </form>
+</div>
+
+<script type="text/javascript">
+    $('#myForm').submit(function (event) {
+        event.preventDefault();
+        var $inputs = $('#myForm :input');
+        var values = {};
+        $inputs.each(function () {
+            values[this.name] = $(this).val();
+        });
+        $('#displayArea').append("<tr><td>" + values.username + "</td><td>" + values.address + "</td></tr>");
+        $("input[type=text], textarea").val("");
+    });
+</script>

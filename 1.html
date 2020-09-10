@@ -1,0 +1,47 @@
+<form method="post" action="register.php">
+    <input type="text" name="first_name" placeholder="First name">
+    <input type="text" name="last_name" placeholder="Last name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="phone" placeholder="Phone">
+    <label>Gender</label>
+    <input type="radio" name="gender" value="male">
+    <input type="radio" name="gender" value="female">
+    <input type="date" placeholder="Date of Birth">
+    <input type="password" name="password" id="password" placeholder="Password">
+    <input type="password" name="password_confirm" id="confirm_password" placeholder="Password Confirmation">
+    <div id="message"></div>
+    <input type="submit" value="Register">
+</form>
+
+// to validate that password and password Confirmation have same value
+<script>
+    $('#password, #confirm_password').on('keyup', function () {
+        if ($('#password').val() == $('#confirm_password').val()) {
+            $('#message').html('Matching').css('color', 'green');
+        } else
+            $('#message').html('Not Matching').css('color', 'red');
+    });
+</script>
+
+// css styling
+<style>
+    form {
+        font-size: 110%;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        color: saddlebrown;
+        margin: 16px 0 3px;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: cornsilk;
+        border: solid 1px tan;
+    }
+</style>

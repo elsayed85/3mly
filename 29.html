@@ -1,0 +1,30 @@
+<label >Product Quantity: </label>
+<input id="quantity" type="text"   value="0" />
+<input id="subs"     type="button" value="-" />
+<input id="adds"     type="button" value="+" />
+
+<script>
+    $(function () {
+        $('#adds').on('click', add);
+        $('#subs').on('click', remove);
+    });
+
+    function add() {
+        var input = $('#quantity'),
+            value = input.val();
+        input.val(++value);
+        if (value > 0) {
+            $('#subs').removeAttr('disabled');
+        }
+    }
+
+    function remove() {
+        var input = $('#quantity'),
+            value = input.val();
+        if (value > 0) {
+            input.val(--value);
+        } else {
+            $('#subs').attr('disabled', 'disabled');
+        }
+    }
+</script>
